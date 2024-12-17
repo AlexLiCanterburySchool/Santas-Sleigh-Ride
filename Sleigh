@@ -14,7 +14,7 @@ public class Sleigh
 
   public movement(int changeX)
   {
-    if(posX + changeX <= minMax || posX + changeX)
+    if(posX + changeX < minMax || posX + changeX > maxX)
     {
       posX = (posX + changeX) % maxX;
     }
