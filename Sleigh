@@ -1,16 +1,29 @@
 public class Sleigh
 {
   public int posX;
+  public int minX;
+  public int maxX;
   public static final posY = 0;
 
-  public Sleigh(int posX)
+  public Sleigh(int posX, int minX, int maxX)
   {
     this.posX = posX;
+    this.minX = minX;
+    this.maxX = maxX;
   }
 
   public movement(int changeX)
   {
-    posX += changeX;
+    if(posX + changeX <= minMax || posX + changeX)
+    {
+      posX = (posX + changeX) % maxX;
+    }
+
+    else
+    {
+      posX += changeX;  
+    }
+    
   }  
 
 }
