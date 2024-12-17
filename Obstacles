@@ -1,18 +1,27 @@
 class Obstacle {
-  public int posX;
   public int posY;
+  public int screenMax; //screenMax represents the maximum width
 
-  public Obstacle(int posX, int posY)
+  public Obstacle(int posY, int screenMax)
   {
-    this.posX = posX;
+    this.screenMax = screenMax - 1;
     this.posY = posY;
   }
 
-  public void movement(int changeX, int changeY)
+  public void movement(int changeY)
   {
-    posX = posX + changeX;
-    posY = posY + changeY;
+    if (posY + changeY < 0){
+      posY = screenMax;
+    }
+    else if (posY + changeY > screenMax){
+      posY = 0;
+    }
+    else{
+      posY = posY + changeY;
+    }
   }
+
+
 }
-//comment here!
+//IMPORTANTE: el código no está listo para ser implementado. Hay que buscar la manera de que actualice las posiciones.
 
