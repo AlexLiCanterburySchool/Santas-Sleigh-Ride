@@ -27,6 +27,10 @@ class GameEngine{
     score = score + newScoreUpdate;
   }
 
+  public int getScreenWidth(){
+    return screenWidth;
+  }
+
   public void checkOutOfBounds(){
     
   }
