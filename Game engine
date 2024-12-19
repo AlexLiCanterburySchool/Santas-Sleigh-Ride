@@ -37,7 +37,7 @@ class GameEngine{
     }
   }
   public void spawnObject(){
-    while(object.getPositionY() != screenLength){
+    while(object.getPositionY() <= screenLength){
       Random ran = new Random.randInt(0, screenLength);
       grid[0][ran] = 'O';
       printGrid();
