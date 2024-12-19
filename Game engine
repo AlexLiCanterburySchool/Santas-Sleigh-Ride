@@ -31,4 +31,9 @@ class GameEngine{
   public int getScreenWidth(){
     return screenWidth;
   }
+  public void checkCollision(){
+    if(obstacle.getPositionX() == sleigh.getPositionX() && obstacle.getPositionY() == sleigh.getPositionY()){
+      gameOver = true;
+    }
+  }
 }
