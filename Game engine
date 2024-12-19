@@ -24,7 +24,7 @@ class GameEngine{
       System.out.println(new String(grid[r]));//check syntax
   }
 
-  public setScore(int newScoreUpdate){
+  public void setScore(int newScoreUpdate){
     score = score + newScoreUpdate;
   }
 
@@ -35,5 +35,10 @@ class GameEngine{
     if(obstacle.getPositionX() == sleigh.getPositionX() && obstacle.getPositionY() == sleigh.getPositionY()){
       gameOver = true;
     }
+  }
+  public void spawnObject(){
+    Random ran = new Random.randInt(0, screenLength);
+    grid[0][ran] = 'O';
+    printGrid();
   }
 }
