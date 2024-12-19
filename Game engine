@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.Random;ç
+import java.util.*;
 import java
 
 class GameEngine{
@@ -24,26 +25,24 @@ class GameEngine{
       System.out.println(new String(grid[r]));//check syntax
   }
 
-  public void setScore(int newScoreUpdate){
+  public setScore(int newScoreUpdate){
     score = score + newScoreUpdate;
   }
 
   public int getScreenWidth(){
     return screenWidth;
   }
-  public void checkCollision(){
-    if(obstacle.getPositionX() == sleigh.getPositionX() && obstacle.getPositionY() == sleigh.getPositionY()){
-      gameOver = true;
+
+  public int turnSystem(Scanner user_input){
+    System.out.println("Enter your next movement:");
+    String input = user_input.next();
+    int movementInputted;
+    if(input.equals("A") || input.equals("a")){
+        movementInputted = -1; 
+    }else if(input.equals("B") || input.equals("B")){
+      movementInputted = 1;
     }
-  }
-  public void spawnObject(){
-    while(object.getPositionY() <= screenLength){
-      Random ran = new Random.randInt(0, screenLength);
-      grid[0][ran] = 'O';
-      printGrid();
-    }
-    else{
-      object.positionY = 0;
-    }
+    sleighSantaClaus.movement(movementInputted);
+    
   }
 }
